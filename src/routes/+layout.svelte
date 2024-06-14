@@ -1,13 +1,9 @@
 <script lang="ts">
-	import { Sound } from "svelte-sound";
-	import soundFile from "$lib/buzzer.mp3";
-	import { onMount } from "svelte";
+	import { buzzerSound } from '$lib/audioStore';
+	import soundFile from '$lib/buzzer.mp3';
+	import { Sound } from 'svelte-sound';
 
-	const help = new Sound(soundFile);
-
-	onMount(() => {
-		help.play();
-	});
+	$buzzerSound = new Sound(soundFile);
 </script>
 
 <slot></slot>
